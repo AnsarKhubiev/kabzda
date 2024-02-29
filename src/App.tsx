@@ -1,11 +1,26 @@
 import React from 'react';
 import './App.css';
+import {Accordion} from "./components/accordion/Accordion";
+import {Rating} from "./components/rating/Rating";
 
 function App() {
-  return (
-    <div className="App">
-    </div>
-  );
+    return (
+        <div>
+            <PageTitle title={'This is APP component'}/>
+            <Rating value={1}/>
+            <Accordion titleValue={'Menu'} collapsed={true}/>
+        </div>
+    );
 }
+
+type PageTitlePropsType = {
+    title: string
+}
+
+function PageTitle({title}: PageTitlePropsType) {
+    return <h1>{title}</h1>
+}
+
+
 
 export default App;
