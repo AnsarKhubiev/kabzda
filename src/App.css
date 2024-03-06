@@ -1,3 +1,33 @@
 body {
-  background-color: #c5c5cb;
+  /*background-color: #c5c5cb;*/
 }
+
+.tablo {
+  text-align: center;
+  width: 60px;
+  height: 30px;
+  border: 1px solid black;
+}
+
+.on {
+  background-color: green;
+}
+
+.off {
+  background-color: red;
+}
+
+
+.light {
+  width: 20px;
+  height: 20px;
+  border: 1px solid black;
+  border-radius: 10px;
+}
+
+.light-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
