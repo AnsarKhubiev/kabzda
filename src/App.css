@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.lights {
+  margin-top: 5px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100px;
+  /*border: 1px solid black;*/
+}
+
+.bulb, .round-light {
+  padding: 3px;
+  border: 1px solid black;
+}
+
+.round-light {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.green-lights {
+  background-color: green;
+}
+
+.red-lights {
+  background-color: red;
+}
