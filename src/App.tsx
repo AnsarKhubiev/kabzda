@@ -4,6 +4,8 @@ import {Rating} from "./components/Rating/Rating";
 import {Accordion} from "./components/Accordion/Accordion";
 import {OnOff} from "./components/OnOff/OnOff";
 import {UnControlledOnOff} from './components/UnControlledOnOff/UnControlledOnOff';
+import {UnControlledAccordion} from "./components/UnControlledAccordion/UnControlledAccordion";
+import {UnControlledRating} from "./components/UnControlledRating/UnControlledRating";
 
 type PagePropsType = {
     title: string
@@ -16,35 +18,30 @@ function App() {
     const [ratingValue, setRatingValue] = useState<RatingValueType>(0)
     const [accordionCollapsed, setAccordionCollapsed] = useState<boolean>(false)
     const [switchOn, setSwitchOn] = useState<boolean>(false)
-
     const changeCollapse = () => setAccordionCollapsed(!accordionCollapsed)
 
     return (
         <div className="App">
-            {/*<PageTitle title="This is App Component"/>*/}
-            {/*<PageTitle title="My friends"/>*/}
-            {/*Article 1*/}
+            <PageTitle title="This is App Component"/>
+            <PageTitle title="My friends"/>
+            Article 1
 
-            {/*<Rating value={ratingValue} onClick={setRatingValue}/>*/}
+            <Rating value={ratingValue} onClick={setRatingValue}/>
 
-            {/*<UnControlledAccordion titleValue="Menu" />*/}
-            {/*<UnControlledAccordion titleValue="Users" />*/}
+            <UnControlledAccordion titleValue="Menu" />
+            <UnControlledAccordion titleValue="Users" />
 
-            <Accordion
-                titleValue='Menu'
-                collapsed={accordionCollapsed}
-                onChange={changeCollapse}
-            />
 
-            {/*<UnControlledRating />*/}
-            {/*Article 2*/}
-            {/*<Rating value={0}/>*/}
+
+            <UnControlledRating />
+            Article 2
+            <Rating value={0} onClick={()=>{}}/>
             {/*<Rating value={1}/>*/}
             {/*<Rating value={2}/>*/}
             {/*<Rating value={3}/>*/}
             {/*<Rating value={4}/>*/}
             {/*<Rating value={5}/>*/}
-            {/*<OnOff on={switchOn} onChange={setSwitchOn}/>*/}
+            <OnOff on={switchOn} onChange={setSwitchOn}/>
             <UnControlledOnOff onChange={setSwitchOn}/>
             {switchOn.toString()}
         </div>
