@@ -33,7 +33,7 @@ function App() {
 
 
 
-            <UnControlledRating />
+            {/*<UnControlledRating />*/}
             Article 2
             <Rating value={0} onClick={()=>{}}/>
             {/*<Rating value={1}/>*/}
