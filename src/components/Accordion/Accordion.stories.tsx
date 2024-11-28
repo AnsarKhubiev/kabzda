@@ -7,36 +7,38 @@ export default {
     component: Accordion
 }
 
-const onChangeHandler = action('onChange')
+const callback = action('onChange')
+const onClickCallback = action('some item was clicked')
 
-export const CollapsedAccordion = () => {
-    return (
-        <Accordion
-            titleValue="Collapsed Accordion"
-            collapsed={false}
-            onChange={onChangeHandler}
-        />
-    )
+export const MenuCollapsedMode = () => {
+    return <Accordion
+        titleValue="Collapsed Accordion"
+        collapsed={true}
+        onChange={callback}
+        items={[{title: 'Ansar', value: '1'}, {title: 'Karim', value: '2'}, {title: 'Ayna', value: '3'}]}
+        onClick={onClickCallback}
+    />
 }
 
-export const OpenedAccordion = () => {
-    return (
-        <Accordion
-            titleValue="Opened Accordion"
-            collapsed={false}
-            onChange={() => {
-            }}
-        />
-    )
+export const UsersUnCollapsedMode = () => {
+    return <Accordion
+        titleValue="Opened Accordion"
+        collapsed={false}
+        onChange={() => {
+        }}
+        items={[{title: 'Ansar', value: '1'}, {title: 'Karim', value: '2'}, {title: 'Ayna', value: '3'}]}
+        onClick={onClickCallback}
+    />
+
 }
 
-export const AccordionDemo = () => {
+export const ModeChanging = () => {
     const [collapsed, setCollapsed] = useState(false)
-    return (
-        <Accordion
-            titleValue="Accordion"
-            collapsed={collapsed}
-            onChange={() => setCollapsed(!collapsed)}
-        />
-    )
+    return <Accordion
+        titleValue="Accordion"
+        collapsed={collapsed}
+        onChange={() => setCollapsed(!collapsed)}
+        items={[{title: 'Ansar', value: '1'}, {title: 'Karim', value: '2'}, {title: 'Ayna', value: '3'}]}
+        onClick={value => alert(`user with ID ${value} should be happy!`)}
+    />
 }
