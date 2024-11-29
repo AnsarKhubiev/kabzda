@@ -1,4 +1,4 @@
-import {useState} from "react";
+import React, {useState} from "react";
 import {RatingValueType} from "../../App";
 
 type StarPropsType = {selected: boolean, setValue: () => void}
@@ -19,6 +19,6 @@ export function UnControlledRating({defaultValue, onChange}: RatingPropsType) {
     )
 }
 
-function Star({selected, setValue}: StarPropsType) {
+const Star: React.FC<StarPropsType> = React.memo(({selected, setValue}: StarPropsType) => {
     return <span onClick={setValue}>{selected ? <b>star </b> : "star"}</span>
-}
+})

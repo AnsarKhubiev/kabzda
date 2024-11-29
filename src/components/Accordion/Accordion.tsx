@@ -18,7 +18,12 @@ type AccordionBodyPropsType = {
     onClick: (value: any) => void
 }
 
-export function Accordion({titleValue, collapsed, onChange, items, onClick}: AccordionPropsType) {
+type AccordionTitlePropsType = {
+    title: string
+    onChange: () => void
+}
+
+export const Accordion: React.FC<AccordionPropsType> = ({titleValue, collapsed, onChange, items, onClick}) => {
     return (
         <div>
             <AccordionTitle title={titleValue} onChange={onChange}/>
@@ -27,22 +32,16 @@ export function Accordion({titleValue, collapsed, onChange, items, onClick}: Acc
     )
 }
 
-
-type AccordionTitlePropsType = {
-    title: string
-    onChange: () => void
-}
-
-function AccordionTitle({title, onChange}: AccordionTitlePropsType) {
+const AccordionTitle: React.FC<AccordionTitlePropsType> = React.memo(({title, onChange}) => {
     return (
         <h3 onClick={onChange}>{title}</h3>
     )
-}
+})
 
-function AccordionBody({items, onClick}: AccordionBodyPropsType) {
+const AccordionBody: React.FC<AccordionBodyPropsType> = React.memo(({items, onClick}) => {
     return (
         <ul>
             {items.map(item => <li onClick={()=>{onClick(item.value)}} key={item.value}>{item.title}</li>)}
         </ul>
     )
-}
+})

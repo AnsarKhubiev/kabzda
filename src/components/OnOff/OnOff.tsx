@@ -5,7 +5,7 @@ type OnOffPropsType = {
     onChange: (on: boolean) => void
 }
 
-export const OnOff = ({on, onChange}: OnOffPropsType) => {
+export const OnOff: React.FC<OnOffPropsType> = ({on, onChange}) => {
 
 
     const onStyle = {

@@ -1,5 +1,5 @@
 import React, {useReducer} from "react";
-import {reducer, StateType, TOGGLE_COLLAPSED} from "./Reducer";
+import {reducer, TOGGLE_COLLAPSED} from "./Reducer";
 
 type UnControlledAccordionPropsType = {
     titleValue: string
@@ -20,11 +20,11 @@ export function UnControlledAccordion({titleValue}: UnControlledAccordionPropsTy
     )
 }
 
-function AccordionTitle({title, onClick}: UnControlledAccordionTitlePropsType) {
+const AccordionTitle: React.FC<UnControlledAccordionTitlePropsType> = React.memo(({title, onClick}) => {
     return <h3 onClick={onClick}>{title}</h3>
-}
+})
 
-function AccordionBody() {
+const AccordionBody: React.FC = React.memo(() => {
     return (
         <ul>
             <li>1</li>
@@ -32,4 +32,4 @@ function AccordionBody() {
             <li>3</li>
         </ul>
     )
-}
+})

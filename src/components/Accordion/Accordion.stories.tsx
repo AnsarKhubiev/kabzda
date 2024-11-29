@@ -20,7 +20,7 @@ export const MenuCollapsedMode = () => {
     />
 }
 
-export const UsersUnCollapsedMode = () => {
+export const UsersUnCollapsedMode =  () =>{
     return <Accordion
         titleValue="Opened Accordion"
         collapsed={false}

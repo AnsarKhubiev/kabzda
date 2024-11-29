@@ -1,4 +1,6 @@
 import {RatingValueType} from "../../App";
+import React from "react";
+
 
 type RatingPropsType = {
     value: RatingValueType
@@ -25,6 +27,6 @@ type StarPropsType = {
     value: RatingValueType
 }
 
-function Star({selected, onClick, value}: StarPropsType) {
+const Star: React.FC<StarPropsType> = React.memo(({selected, onClick, value}) => {
     return <span onClick={() => onClick(value)}>{selected ? <b>star </b> : "star "}</span>
-}
+})
